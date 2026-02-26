@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prototype: HW Quality Gate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="phone">
+      <header class="phone-top">
+        <div class="status-line">
+          <span>9:41</span>
+          <span class="status-icons">◴ ◉ ▰</span>
+        </div>
+        <div class="url-bar">neuroom.ru</div>
+      </header>
+
+      <section class="page">
+        <div class="page-head">
+          <div class="badge">Нейрум</div>
+          <h1>Задание от 21.09.25</h1>
+        </div>
+
+        <div class="page-body">
+          <h2>Фото ДЗ</h2>
+          <p>Выбери фото в формате jpeg или png, которые ты отправишь учителю на проверку</p>
+        </div>
+      </section>
+
+      <div class="overlay" aria-hidden="true"></div>
+
+      <section class="sheet screen" id="screen-checking" aria-live="polite">
+        <div class="loader"></div>
+        <h3>Проверяем качество...</h3>
+        <p>Это занимает 1–2 секунды</p>
+      </section>
+
+      <section class="sheet screen hidden" id="screen-action" aria-live="polite">
+        <h3>Проверка фото</h3>
+        <p class="sheet-copy">Фото готовы к отправке. Можно отправить сейчас или переснять.</p>
+
+        <div class="actions">
+          <button id="btn-send" class="btn btn--primary">Отправить</button>
+          <button id="btn-retake" class="btn btn--secondary">Переснять</button>
+        </div>
+      </section>
+
+      <section class="sheet screen hidden" id="screen-result" aria-live="polite">
+        <h3 id="result-title">Отправляем...</h3>
+        <p id="result-text" class="sheet-copy">Подождите, пожалуйста.</p>
+        <button id="btn-restart" class="btn btn--ghost">Переиграть сценарий</button>
+      </section>
+
+      <footer class="home-indicator" aria-hidden="true"></footer>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
